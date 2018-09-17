@@ -1,0 +1,24 @@
+version: '3.0'
+services:
+  single_message_bot: # botname_bot
+    image: registry.bale.ai:2443/single_message_bot:0.0.1
+    container_name: single_message_bot #same as service name
+    environment:
+    #   Config
+      - BASE_URL=wss://api.bale.ai/v1/bots/
+      - TOKEN=1f9610ea2f56c115f880fc602a729ea09aecee53
+      - CHECK_INTERVAL=0.5
+      - LIMIT_SHOW_LOCATIONS=3
+#      - MAIN_TEXT_MESSAGE=
+      - TIME_OUT_WAIT_FOR_CHECK_CHECK_CLIENT_QUEUE=60
+      - TIME_OUT_FOR_BLOCK_ON_CLIENT_QUEUE=0.5
+      - TIME_OUT_FOR_BLOCK_ON_CLIENT_QUEUE=5
+    #   Log config
+      - SDK_USE_GRAYLOG=2
+      - LOG_SOURCE=single_message_bot
+      - SDK_GRAYLOG_HOST=192.168.3.191
+      - SDK_GRAYLOG_PORT=12201
+      - SDK_LOG_LEVEL=10
+      - SDK_LOG_FACILITY_NAME=single_message_bot
+      - MONITORING_HASH=
+    restart: always # use always

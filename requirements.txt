@@ -1,0 +1,9 @@
+aiohttp==2.3.7
+async-timeout==2.0.1
+asyncio==3.4.3
+balebot==1.2.5
+chardet==3.0.4
+graypy==0.2.14
+idna==2.7
+multidict==4.4.0
+yarl==1.2.0

@@ -40,7 +40,7 @@ def start_conversation(bot, update):
     user_peer = update.get_effective_user()
     text_message = TextMessage(Config.main_text_message)
     kwargs = {"message": text_message, "update": update, "bot": bot, "try_times": 1}
-    bot.send_message(text_message, user_peer, success_callback=failure_send_message,
+    bot.send_message(text_message, user_peer, success_callback=success_send_message,
                      failure_callback=failure_send_message, kwargs=kwargs)
     dispatcher.finish_conversation(update)
 
